@@ -165,7 +165,7 @@ main .main-content .main-text button {
 }
 
 main .main-content .main-text button:hover {
-  background-color: transparent;
+  background-color: hsl(0, 0%, 98%);
   border: 1px solid hsl(0, 0%, 41%);
   color: hsl(0, 0%, 8%);
   cursor: pointer;
@@ -182,4 +182,104 @@ main .main-image .image-1 {
 }
 main .main-image .image-2 {
   display: none;
+}
+
+.overlay {
+  width: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(80, 80, 80, 0.5);
+  height: 100vh;
+  transition-property: width;
+  transition-duration: 2s;
+}
+
+.overlay nav.side-menu {
+  width: 0;
+  display: none;
+  background-color: white;
+  float: right;
+  height: 100%;
+  text-align: end;
+  transition-property: width;
+  transition-duration: 2s;
+}
+
+.overlay nav.side-menu > a {
+  font-size: 62px;
+  position: relative;
+  right: 7px;
+}
+
+nav.side-menu ul {
+  text-align: start;
+  line-height: 2.8em;
+  padding: 25px 45px;
+  margin-top: 25px;
+}
+
+nav.side-menu ul li {
+  display: block;
+}
+
+nav.side-menu ul li a {
+  color: #00001a;
+  font-size: 20px;
+}
+
+nav.side-menu ul li a:hover {
+  font-weight: bolder;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 15px auto;
+  }
+  /* header */
+  header {
+    margin-bottom: 15px;
+  }
+  /* main */
+  main {
+    margin: 0;
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+  main .main-image {
+    width: 100%;
+    margin-bottom: 35px;
+  }
+  main .main-image .image-1 {
+    display: none;
+  }
+  main .main-image .image-2 {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  main .main-content {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  main .main-content .main-text {
+    margin-top: 0px;
+    padding: 5px;
+  }
+  main .main-content .main-text h1 {
+    font-size: 2.5em;
+  }
+  main .main-content .main-text {
+    margin-bottom: 35px;
+  }
+  main .main-content .main-text p {
+    margin-bottom: 28px;
+  }
+  /* header */
+  header nav,
+  header .login-register {
+    display: none;
+  }
 }

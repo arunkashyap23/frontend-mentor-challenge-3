@@ -10,6 +10,13 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="style.css" />
 
     <title>Frontend Mentor | Intro section with dropdown navigation</title>
@@ -74,6 +81,78 @@
               <li><a href="#">About</a></li>
             </ul>
           </nav>
+          <a href="#" class="barmenu" onclick="openSlideMenu()"
+            ><i class="fa-solid fa-bars"></i
+          ></a>
+          <div class="overlay">
+            <nav class="side-menu">
+              <a href="#" class="btn-close" onclick="closeSlideMenu()"
+                >&times;</a
+              >
+              <ul>
+                <!-- <li><a href="#">Home</a></li>
+                <li><a href="#">New</a></li>
+                <li><a href="#">Popular</a></li>
+                <li><a href="#">Trending</a></li>
+                <li><a href="#">Categories</a></li> -->
+                <li>
+                  <a href="#" class="link-1"
+                    >Features
+                    <ul class="dropdown-menu-1">
+                      <li>
+                        <a href="#"
+                          ><div>
+                            <img src="images/icon-todo.svg" alt="" />
+                          </div>
+                          Todo List</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#"
+                          ><div>
+                            <img src="images/icon-calendar.svg" alt="" />
+                          </div>
+                          Calendar</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#"
+                          ><div>
+                            <img src="images/icon-reminders.svg" alt="" />
+                          </div>
+                          Reminders</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div>
+                            <img src="images/icon-planning.svg" alt="" />
+                          </div>
+                          Planning</a
+                        >
+                      </li>
+                    </ul>
+                  </a>
+                </li>
+                <li>
+                  <a href="#"
+                    >Company
+                    <ul class="dropdown-menu-1">
+                      <li><a href="#">History</a></li>
+                      <li><a href="#">Our Team</a></li>
+                      <li><a href="#">Blog</a></li>
+                    </ul>
+                  </a>
+                </li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">About</a></li>
+              </ul>
+            </nav>
+            <div class="login-register">
+              <a href="#">Login</a>
+              <button>Register</button>
+            </div>
+          </div>
           <div class="login-register">
             <a href="#">Login</a>
             <button>Register</button>
@@ -111,5 +190,27 @@
         </main>
       </div>
     </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"
+      integrity="sha512-rpLlll167T5LJHwp0waJCh3ZRf7pO6IT1+LZOhAyP6phAirwchClbTZV3iqL3BMrVxIYRbzGTpli4rfxsCK6Vw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      function openSlideMenu() {
+        document.querySelector(".overlay").style.width = "100%";
+        document.querySelector(".overlay nav.side-menu").style.width = "60%";
+        document.querySelector(".overlay nav.side-menu").style.display =
+          "block";
+      }
+      function closeSlideMenu() {
+        document.querySelector(".overlay").style.width = "0";
+        document.querySelector(".overlay nav.side-menu").style.width = "0";
+        setTimeout(() => {
+          document.querySelector(".overlay nav.side-menu").style.display =
+            "none";
+        }, 2000);
+      }
+    </script>
   </body>
 </html>
